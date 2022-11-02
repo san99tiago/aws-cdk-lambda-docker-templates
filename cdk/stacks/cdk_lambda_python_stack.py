@@ -101,12 +101,12 @@ class CdkLambdaPythonStack(Stack):
             id="{}-Lambda".format(self.construct_id),
             code=aws_lambda.DockerImageCode.from_image_asset(PATH_TO_FUNCTION_FOLDER),
             function_name="{}{}".format(self.name_prefix, self.main_resources_name),
-            environment={"ENVIRONMENT": self.environment, "OWNER": "Santiago Garcia Arango"},
+            environment={"ENVIRONMENT": self.deployment_environment, "OWNER": "Santiago Garcia Arango"},
             description="Simple example of Docker-Python image for Lambda Functions",
             role=self.lambda_role,
             timeout=Duration.seconds(15),
             memory_size=128,
-            log_retention=aws_logs.RetentionDays.ONE_WEEK,
+            # log_retention=aws_logs.RetentionDays.ONE_WEEK,
         )
 
         self.docker_lambda_function.add_alias(self.deployment_environment)
