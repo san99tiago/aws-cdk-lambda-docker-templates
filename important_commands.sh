@@ -59,6 +59,9 @@ pip install -r requirements.txt || pip3 install -r requirements.txt
 cdk bootstrap
 source .venv/bin/activate || echo "Make sure that virtual env exists"
 
+# Test Lambda Python Stack
+python -m pytest
+
 # Lambda Python Stack
 cdk synthesize --app "python3 app_lambda_python.py"
 cdk diff --app "python3 app_lambda_python.py"
