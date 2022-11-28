@@ -1,5 +1,7 @@
 FROM public.ecr.aws/lambda/python:3.9
 
+LABEL maintainer="Santiago Garcia Arango [san99tiago]"
+
 # Copy function code
 COPY lambda_function.py ${LAMBDA_TASK_ROOT}
 
