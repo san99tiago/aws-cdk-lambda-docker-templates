@@ -4,7 +4,9 @@ The purpose of this project is to showcase how to deploy AWS Lambda Functions wi
 
 ## General Architecture
 
-TO-DO
+<img src="assets/CDK_Lambda_Docker_Templates.png" width=90%>
+
+<br>
 
 ## Python-based Approach
 
