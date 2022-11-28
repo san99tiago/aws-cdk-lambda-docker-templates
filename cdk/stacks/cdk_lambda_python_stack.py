@@ -6,7 +6,7 @@ from aws_cdk import (
     aws_iam,
     aws_lambda,
     Duration,
-    aws_logs,
+    # aws_logs,
 )
 from constructs import Construct
 

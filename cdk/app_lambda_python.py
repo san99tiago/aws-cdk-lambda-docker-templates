@@ -14,7 +14,7 @@ app = cdk.App()
 
 stack = CdkLambdaPythonStack(
     app,
-    "{}-stack-compute-cdk".format(MAIN_RESOURCES_NAME),
+    "{}-stack-cdk".format(MAIN_RESOURCES_NAME),
     NAME_PREFIX,
     MAIN_RESOURCES_NAME,
     DEPLOYMENT_ENVIRONMENT,
