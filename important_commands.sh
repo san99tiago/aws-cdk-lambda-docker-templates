@@ -34,8 +34,8 @@ pip install aws-cdk-lib
 aws configure
 
 # Bootstrap CDK (provision initial resources to work with CDK.. S3, roles, etc)
-#! Change "ACCOUNT-NUMBER-1" and "REGION-1" to your needed values 
-cdk bootstrap aws://ACCOUNT-NUMBER-1/REGION-1
+#! Change "ACCOUNT-NUMBER" and "REGION" to your needed values 
+cdk bootstrap aws://ACCOUNT-NUMBER/REGION
 
 # Create the CDK project's folder
 mkdir cdk
@@ -62,7 +62,7 @@ source .venv/bin/activate || echo "Make sure that virtual env exists"
 # Test Lambda Python Stack
 python -m pytest
 
-# Lambda Python Stack
+# CDK commands
 cdk synthesize --app "python3 app_lambda_python.py"
 cdk diff --app "python3 app_lambda_python.py"
 cdk deploy --app "python3 app_lambda_python.py"
