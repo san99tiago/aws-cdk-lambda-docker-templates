@@ -28,7 +28,7 @@ Then, a custom label for traceability is added (optional):
 LABEL maintainer="Santiago Garcia Arango [san99tiago]"
 ```
 
-Afterwards, one of the most important steps happen. This is copying the actual code into Lambda Function folder that is dynamically used for the execution (in this case `${LAMBDA_TASK_ROOT}` is an pre-defined environment variable, that based on the source image creation, it corresponds to `/var/task` [python3.9 (base image)](https://github.com/aws/aws-lambda-base-images/blob/python3.9/Dockerfile.python3.9)):
+Afterwards, one of the most important steps happen. This is copying the actual code into Lambda Function folder that is dynamically used for the execution (in this case `${LAMBDA_TASK_ROOT}` is an pre-defined environment variable, that based on the source image creation, it corresponds to `/var/task`, as can be seen at [python3.9 (base image)](https://github.com/aws/aws-lambda-base-images/blob/python3.9/Dockerfile.python3.9)):
 
 ```Dockerfile
 # Copy function's code
