@@ -110,9 +110,11 @@ class CdkLambdaPythonStack(Stack):
         )
 
         self.docker_lambda_function.add_alias(self.deployment_environment)
-        self.docker_lambda_function_url = self.docker_lambda_function.add_function_url(
-            auth_type=aws_lambda.FunctionUrlAuthType.NONE,
-        )
+
+        # TODO: only if future scenarios require simple URL out-of-the-box
+        # self.docker_lambda_function_url = self.docker_lambda_function.add_function_url(
+        #     auth_type=aws_lambda.FunctionUrlAuthType.NONE,
+        # )
 
 
     def show_cloudformation_outputs(self):
@@ -139,11 +141,4 @@ class CdkLambdaPythonStack(Stack):
             "LambdaFunctionRoleARN",
             value=self.docker_lambda_function.role.role_arn,
             description="Role for the created Lambda function",
-        )
-
-        CfnOutput(
-            self,
-            "LambdaFunctionUrl",
-            value=self.docker_lambda_function_url.url,
-            description="URL to invoke the created Lambda function",
         )
